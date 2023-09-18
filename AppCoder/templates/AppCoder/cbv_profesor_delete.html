@@ -1,0 +1,20 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% block contenidoQueCambia %}
+
+{{ nombre }}
+<h1>Borrar Profesor: {{profesor.nombre}} {{ profesor.apellido }}</h1>
+
+<p>Estás seguro que deseas borrar el Nombre: <strong>{{profesor.nombre}}</strong> - Apellido: <strong>{{ profesor.apellido }}</strong>?</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Eliminar">
+</form>
+</div>
+<div style="margin-top: 20px;">
+    <a href="{% url 'profesor-list' %}" style="color: #4a90e2; text-decoration: none;">Ver lista de profesores</a>
+</div>
+</div>
+
+{% endblock %}
